@@ -1,19 +1,20 @@
-def binary_seacrh(list, item):
+def binary_search(arr, target):
     low = 0
-    high = len(list)
-    count = 0
+    high = len(arr) - 1
 
     while low <= high:
-        count += 1
         mid = (low + high) // 2
-        guess = list[mid]
-        if guess == item:
-            print('target: ', guess, 'In steps: ', count)
-            return guess
-        elif guess > item:
+        guess = arr[mid]
+        if guess == target:
+            print('Got it! Index number: ', mid)
+            return
+        if guess > target: 
             high = mid - 1
         else:
-            low = mid + 1        
-            
+            low = mid + 1     
+    print("Target does not exist in this array.")    
+    return
 
-binary_seacrh([1,4,8,9,12], 12)
+arr = [1,4,8,10,67,88]    
+target = 90
+binary_search(arr, target)
