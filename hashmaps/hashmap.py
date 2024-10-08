@@ -38,7 +38,7 @@ def addItems():
   inventory[gun_names[28]] = 1000     # mp5
   inventory[gun_names[29]] = 2000     # scar
   user_input = input("Gun name: ")
-  print("Price is:", inventory[user_input])
+  print("Price is:", inventory.get(user_input))
 
 addItems()
 
